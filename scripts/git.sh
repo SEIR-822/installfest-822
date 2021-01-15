@@ -5,9 +5,7 @@ then
   # if function is in .zshrc, nothing needs to be done
   echo 'Git preferences for zsh already added to ~/.zshrc'
 else
-  # otherwise, add the following to .zshrc
-  # the function returns the current git branch
-  # PS1 adds the current branch after current file in terminal
+  # otherwise, add the following to .zshrc to display git branch information
   # vs code set as default editor
 cat <<'EOF' >> ~/.zshrc
 
@@ -19,10 +17,13 @@ precmd() { vcs_info }
 # format vcs_info variable
 zstyle ':vcs_info:git:*' formats ':%F{green}%b%f'
 
-# set up the prompt
+# set up the prompt to include git branch and complete working directory
 # zsh documentation: http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
 setopt PROMPT_SUBST
 PROMPT='%F{blue}%d/%f${vcs_info_msg_0_} $ '
+# set VS code as default editor
+export EDITOR='code --wait'
+export VISUAL='code --wait'
 
 EOF
 
