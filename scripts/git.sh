@@ -1,24 +1,28 @@
-#!/usr/bin/env bash
-# look for the following string in .bashrc
-if grep -Fq "function parse_git_branch" ~/.bashrc
+#!/usr/bin/env zsh
+# look for the following string in .zshrc
+if grep -Fq "autoload -Uz vcs_info" ~/.zshrc
 then
-  # if function is in .bashrc, nothing needs to be done
-  echo 'Git preferences for bash already added to ~/.bashrc'
+  # if function is in .zshrc, nothing needs to be done
+  echo 'Git preferences for zsh already added to ~/.zshrc'
 else
-  # otherwise, add the following to .bashrc
+  # otherwise, add the following to .zshrc
   # the function returns the current git branch
   # PS1 adds the current branch after current file in terminal
-  # atom set as default editor
-cat <<'EOF' >> ~/.bashrc
+  # vs code set as default editor
+cat <<'EOF' >> ~/.zshrc
 
-# Git
-function parse_git_branch {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo "("${ref#refs/heads/}")"
-}
-export PS1="\[$(tput bold)\]\w\[$(tput sgr0)\] \$(parse_git_branch)\n$ "
-export EDITOR='code --wait'
-export VISUAL='code --wait'
+# Git function: https://stackoverflow.com/questions/59009508/how-to-only-show-current-folder-and-git-branch-and-for-home-in-zsh
+# load version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+# format vcs_info variable
+zstyle ':vcs_info:git:*' formats ':%F{green}%b%f'
+
+# set up the prompt
+# zsh documentation: http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
+setopt PROMPT_SUBST
+PROMPT='%F{blue}%d/%f${vcs_info_msg_0_} $ '
 
 EOF
 
@@ -37,6 +41,7 @@ git config --global user.email "$email"
 
 git config --global color.ui true
 git config --global pull.rebase true
+git config --global init.defaultBranch main
 git config --global branch.autosetuprebase always
 git config --global push.default simple
 git config --global branch.autosetupmerge true
