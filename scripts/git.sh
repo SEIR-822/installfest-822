@@ -20,7 +20,7 @@ zstyle ':vcs_info:git:*' formats ':%F{green}%b%f'
 # set up the prompt to include git branch and complete working directory
 # zsh documentation: http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
 setopt PROMPT_SUBST
-PROMPT='%F{blue}%d/%f${vcs_info_msg_0_} $ '
+PROMPT='%B%F{blue}%~ ${vcs_info_msg_0_}%f%b${NEWLINE}$ '
 # set VS code as default editor
 export EDITOR='code --wait'
 export VISUAL='code --wait'
