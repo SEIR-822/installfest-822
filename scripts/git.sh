@@ -15,7 +15,7 @@ autoload -Uz vcs_info
 precmd() { vcs_info }
 
 # format vcs_info variable
-zstyle ':vcs_info:git:*' formats ':%F{green}%b%f'
+zstyle ':vcs_info:git:*' formats '- %F{green}%b%f'
 
 # set up the prompt to include git branch and complete working directory
 # zsh documentation: http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
