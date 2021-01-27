@@ -1,8 +1,8 @@
 # Installfest
 
-Follow these instructions to set up your laptop for work in SEI. If you've previously set up a development environment on your computer, you may wish to skip some of these steps; do not do so without first checking with a consultant!
+Follow these instructions to set up your laptop for work in SEI. If you've previously set up a development environment on your computer, you may wish to skip some of these steps; do not do so without first checking with an instructor!
 
-If at any point you are unsure of whether you have done something correctly, ask a consultant. It's important in many cases that we do these steps in order. In general, if you receive no output, the command has executed successfully. (No news is good news.) If you receive output in your terminal that you didn't expect, please notify a consultant.
+If at any point you are unsure of whether you have done something correctly, ask an instructor. It's important in many cases that we do these steps in order. In general, if you receive no output, the command has executed successfully. (No news is good news.) If you receive output in your terminal that you didn't expect, please notify an instructor.
 
 **The goal of this is not for you to fully understand everything that is being set up on your computer or what all of these tools do!** You should be focused on following along and completing the instructions. If you have any specific questions about anything you do today, we will be happy to answer after Installfest is complete.
 
@@ -76,7 +76,7 @@ The last script may have displayed some errors. That's probably OK!
 
 Most of these
 errors are probably minor, but some might not be. Please wait until one of the
-consultants has given you the go-ahead before moving on.
+instructors has given you the go-ahead before moving on.
 
 When you're ready to proceed, run:
 
@@ -220,14 +220,14 @@ Over the next few days, work on getting the remaining technologies installed:
 
 ### MongoDB
 
-We'll now install MongoDB, another open source database. To do that,
+We will install MongoDB, another open source database. To do that,
 type:
 
 ```
 scripts/mongodb.sh
 ```
 
-If you got any errors there, please let a consultant know. Otherwise, you can
+If you got any errors there, please let an instructor know. Otherwise, you can
 verify that MongoDB is working correctly by running one of the following
 commands:
 
@@ -285,7 +285,7 @@ service postgresql status
 (_Linux_) Postgres will only work if you see a green circle and the words
 "active (running)" somewhere in the output.
 
-If Postgres didn't start correctly according to the criteria above, ask a consultant for assistance.
+If Postgres didn't start correctly according to the criteria above, ask an instructor for assistance.
 
 Verify that Postgres is working with the command
 
