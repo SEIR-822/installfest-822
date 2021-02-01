@@ -6,6 +6,8 @@ If at any point you are unsure of whether you have done something correctly, ask
 
 **The goal of this is not for you to fully understand everything that is being set up on your computer or what all of these tools do!** You should be focused on following along and completing the instructions. If you have any specific questions about anything you do today, we will be happy to answer after Installfest is complete.
 
+Be sure that you run all of these scripts from inside the `installfest` directory. You must be inside this folder so that the commands below have access to the `scripts` directory.
+
 #### Note for Linux Users
 
 We support both macOS and Ubuntu (an open-source Linux based OS) at SEI. If you choose
@@ -28,6 +30,8 @@ In your terminal, type:
 ```bash
   scripts/zsh.sh
 ```
+
+Then restart your Terminal (quit out of the application completely by pressing `command q` and then restart it), and you should see your changes take effect!
 
 ## Command Line Tools/XCode
 

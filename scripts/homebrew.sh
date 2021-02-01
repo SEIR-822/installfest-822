@@ -9,13 +9,15 @@ if [[ $# -eq 0 ]] ; then
     # change ownership of /usr/local and contents to current user
     # change group of directory and contents to admin
     sudo chown -R "$(whoami):admin" /usr/local
-    if [[ which brew >/dev/null ]]; then
+    if which brew > /dev/null; then
       echo "Homebrew is already installed"
     else 
     # use bash to execute curl command to install homebrew
+      echo "Installing Homebrew..."
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
     # check for issues with the brew installation
+    echo "Running brew doctor to check for issues with brew installation"
     brew doctor
   else
     # make it so that if any of these installs fail, the script will exit
