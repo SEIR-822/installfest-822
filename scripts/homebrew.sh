@@ -9,7 +9,7 @@ if [[ $# -eq 0 ]] ; then
     # change ownership of /usr/local and contents to current user
     # change group of directory and contents to admin
     sudo chown -R "$(whoami):admin" /usr/local
-    if [[ which brew >/dev/null ]] ; then
+    if [[ which brew >/dev/null ]]; then
       echo "Homebrew is already installed"
     else 
     # use bash to execute curl command to install homebrew
