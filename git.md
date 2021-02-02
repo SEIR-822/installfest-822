@@ -1,17 +1,5 @@
 # Installfest
 
-- [x] [Github and Initial Setup](github.md)
-- [ ] **Git**
-- [ ] [Bash Configuration](bash.md)
-- [ ] [Command Line Tools - Xcode (macOS only)](command_line_tools.md)
-- [ ] [Homebrew](homebrew.md)
-- [ ] [Node](node.md)
-- [ ] [Python](python.md)
-- [ ] [PostgreSQL](postgres.md)
-- [ ] [MongoDB](mongodb.md)
-- [ ] [Chrome](chrome.md)
-- [ ] [VS Code](vscode.md)
-
 ## Git
 
 Run the command below in your terminal.
@@ -68,4 +56,3 @@ The script will prompt you for some information
 9.   Next, log into git.generalassemb.ly, go to [https://git.generalassemb.ly/settings/keys](https://git.generalassemb.ly/settings/keys),
     and paste in the same SSH key.
 
-  [Continue With Installfest](bash.md)
