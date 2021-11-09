@@ -23,6 +23,13 @@ Be sure that you run all of these scripts from inside the `installfest-master` d
 
 Some of the installations may require you to restart your Terminal. If so, just restart your Terminal and `cd installfest-master` to navigate back into this folder.
 
+## Mac OS Versions
+
+If you have not yet updated to MacOS Monterey Version 12, do NOT update your OS during the course. Updating your OS may result in some unexpected issues and bugs with the tools that we use. 
+
+If you are on Monterey already, please note that some of the installations may not work correctly yet as software is being updated to the new OS. We will find workarounds for any Monterey related issues. 
+
+
 #### Note for Linux Users
 
 We support both macOS and Ubuntu (an open-source Linux based OS) at SEI. If you choose
