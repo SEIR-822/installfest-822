@@ -196,55 +196,6 @@ If you do not already have Google Chrome, [download here](https://www.google.com
 default browser.
 
 
-## Postgres
-
-We will be installing PostgreSQL, an open source relational database management system. In Unit 4 of SEI, we will be writing SQL (structured query language) and maintaining our relational databases using Postgres.
-
-
-![psql Elephant](https://postgresapp.com/img/PostgresAppIconLarge.png)
-
->Note: If you have previously installed Postgres via other means, particularly via EnterpriseDB, you will have all kinds of weird issues with this install. If you have the EnterpriseDB install of Postgres on your machine, take time to completely remove it now.  Otherwise, onward...
-
-#### Mac Users
-
-By far the most painless method for installing Postgres on a Mac these days is to use Postgres App.
-
-Head on over and follow the [straightforward setup instructions](https://postgresapp.com/)
-
-##### Note:
-
-This step is meant to be run as ONE command, not two, and MUST be run so you can access the `psql` commands from the CLI:
-![psql step 3](https://i.imgur.com/Krhe0VT.png)
-
-##### You're all set.
-
-You might need to quit and restart your terminal to be able to just type `psql` and have it open the Postgres CLI.  But right away, you should be able to open the Postgres app by clicking the elephant icon in your taskbar and double-clicking on the db that matches your username.
-
-#### Ubuntu Users
-
-Follow the directions [here](https://www.postgresql.org/download/linux/ubuntu/) to download PostgreSQL using `apt-get`.
-
-#### WSL Users
-
-Follow the installation directions [here](https://harshityadav95.medium.com/postgresql-in-windows-subsystem-for-linux-wsl-6dc751ac1ff3). 
-
-Verify that Postgres is working with the command
-
-```bash
-psql
-```
-
-This should bring you into the PostgreSQL interactive terminal. It should look something like this
-
-```bash
-psql (<version_number>)
-Type "help" for help.
-
-<your_username>=#
-```
-
-Exit the psql terminal by typing `\q`, followed by `Enter`
-
 ### Python
 
 This script will install the Python language onto your computer. If you have a Mac, you may have a certain version of Python installed, but we will be making sure everyone is on the same version.
