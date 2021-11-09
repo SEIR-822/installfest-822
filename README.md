@@ -195,13 +195,6 @@ If your installations were a success, you will see a message in terminal that lo
 If you do not already have Google Chrome, [download here](https://www.google.com/chrome/browser/desktop/index.html), install it, and set it as your
 default browser.
 
-When done, do the following on any page in Chrome:
-
-1.  On MacOS, press `Command + option + J` simultaneously to open up the Chrome inspector
-1.  In the top right corner of the inspector window there is a gear wheel that looks like "⚙" -- click that.
-1.  Go to settings and make sure yours look like the following image.
-
-![Chrome Inspector Settings](https://git.generalassemb.ly/storage/user/5688/files/16fa008e-cecb-11e7-98dc-9a59e264c925)
 
 ## Postgres
 
