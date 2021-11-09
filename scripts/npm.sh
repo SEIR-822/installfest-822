@@ -5,7 +5,7 @@ if which node > /dev/null
   # if node is installed install npm globally  
   then
     echo "Node is installed! Installing npm and required packages globally"
-    npm install --global npm jsonlint eslint remark-lint nodemon node-sass
+    npm install --global npm jsonlint eslint nodemon node-sass
     # Don't allow devs to "fix" npm vulnerabilities for now
     npm set audit false
   else 
