@@ -99,6 +99,8 @@ scripts/npm.sh
 
 <!-- Restart needed between Node and NPM install? -->
 
+Restart your terminal for the installation to take effect.
+
 ## VS Code
 
 VS Code is the text editor we will use throughout the course. If you do not already have Visual Studio Code, [download here](https://code.visualstudio.com/download).
@@ -191,7 +193,24 @@ Code formatting done well makes your code easy to read and understand, and also 
 	},
 	"python.linting.pylintEnabled": true,
 	"python.linting.enabled": true,
-	"python.formatting.provider": "autopep8"
+    "python.formatting.provider": "autopep8",
+	"workbench.colorTheme": "Monokai",
+	"liveServer.settings.donotShowInfoMsg": true,
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"emmet.includeLanguages": {
+		"javascript": "javascriptreact"
+	},
+	"window.zoomLevel": 1,
+	"workbench.iconTheme": "material-icon-theme",
+	"python.linting.pylintArgs": [
+		"--load-plugins=pylint_django",
+		"--disable=missing-docstring,invalid-name"
+	]
 }
 ```
 
