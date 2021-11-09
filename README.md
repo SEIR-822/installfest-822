@@ -196,7 +196,7 @@ If you do not already have Google Chrome, [download here](https://www.google.com
 default browser.
 
 
-### Python
+## Python
 
 This script will install the Python language onto your computer. If you have a Mac, you may have a certain version of Python installed, but we will be making sure everyone is on the same version.
 
