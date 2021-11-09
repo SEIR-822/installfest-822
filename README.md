@@ -113,6 +113,74 @@ scripts/homebrew.sh update
 
 >How do I know it worked? Run `brew --version` to see an output.
 
+## GitHub and Initial Setup
+
+If you haven't done so already, go to [GitHub](http://www.github.com) and create
+an account.
+
+**IMPORTANT**: be sure to write down your username and password somewhere, since
+we'll be using these credentials later.
+
+Next, go to [GitHub Enterprise](https://git.generalassemb.ly) and create an account. It is recommended that you use the same username, email address, and password for both accounts. GitHub Enterprise will be the source of your learning material throughout SEI, while your personal Github will be where you showcase your projects.
+
+## Git
+
+Run the command below in your terminal.
+**This script should be run from the root of this git-install repository.**
+
+```bash
+  scripts/git.sh
+```
+
+The script will prompt you for some information
+
+1.  Provide your GitHub username
+2.  Provide your GitHub email (email you signed up for your account with)
+3.  When prompted, log into GitHub.com, go to [https://github.com/settings/ssh](https://github.com/settings/ssh)
+
+4.  Click the `New SSH key` button at the top right of the page
+
+5.  Enter a title for your SSH key (you can call it whatever you want)
+
+6.  paste in your SSH key. It should be copied to your clipboard already!
+
+    _Help! My SSH key is no longer copied to my clipboard_ (select your OS then run the below command in terminal)
+    <details>
+    <summary>macOS</summary>
+
+`pbcopy < ~/.ssh/id_rsa.pub`
+
+  </details>
+
+  <details>
+  <summary>Linux</summary>
+
+`xclip -selection clipboard < ~/.ssh/id_rsa.pub`
+
+  </details>
+
+7. Click the `Add SSH key` button
+
+8. In your terminal, press `[Enter]` to continue
+
+   If you get a prompt along the lines of
+
+   ```bash
+   The authenticity of host 'github.com (xxx.xxx.xxx.xxx)'... can\'t be established.
+   RSA key fingerprint is XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX.
+   Are you sure you want to continue connecting (yes/no)?
+   ```
+
+   Just type 'yes'. If everything's working, you should get a response like the
+   following:
+
+   ```bash
+   Hi <your_username>! You\'ve successfully authenticated, but GitHub does not provide shell access.
+   ```
+
+9. Next, log into git.generalassemb.ly, go to [https://git.generalassemb.ly/settings/keys](https://git.generalassemb.ly/settings/keys),
+   and paste in the same SSH key.
+
 ## Node/NPM
 
 We're going to be installing Node. Node (and its various packages) will be
@@ -212,73 +280,7 @@ Shut down your terminal and navigate back to the installfest repo before moving 
 
 > How do I know it worked? Run `python3 --version` to see an output. 
 
-## GitHub and Initial Setup
 
-If you haven't done so already, go to [GitHub](http://www.github.com) and create
-an account.
-
-**IMPORTANT**: be sure to write down your username and password somewhere, since
-we'll be using these credentials later.
-
-Next, go to [GitHub Enterprise](https://git.generalassemb.ly) and create an account. It is recommended that you use the same username, email address, and password for both accounts. GitHub Enterprise will be the source of your learning material throughout SEI, while your personal Github will be where you showcase your projects.
-
-## Git
-
-Run the command below in your terminal.
-**This script should be run from the root of this git-install repository.**
-
-```bash
-  scripts/git.sh
-```
-
-The script will prompt you for some information
-
-1.  Provide your GitHub username
-2.  Provide your GitHub email (email you signed up for your account with)
-3.  When prompted, log into GitHub.com, go to [https://github.com/settings/ssh](https://github.com/settings/ssh)
-
-4.  Click the `New SSH key` button at the top right of the page
-
-5.  Enter a title for your SSH key (you can call it whatever you want)
-
-6.  paste in your SSH key. It should be copied to your clipboard already!
-
-    _Help! My SSH key is no longer copied to my clipboard_ (select your OS then run the below command in terminal)
-    <details>
-    <summary>macOS</summary>
-
-`pbcopy < ~/.ssh/id_rsa.pub`
-
-  </details>
-
-  <details>
-  <summary>Linux</summary>
-
-`xclip -selection clipboard < ~/.ssh/id_rsa.pub`
-
-  </details>
-
-7. Click the `Add SSH key` button
-
-8. In your terminal, press `[Enter]` to continue
-
-   If you get a prompt along the lines of
-
-   ```bash
-   The authenticity of host 'github.com (xxx.xxx.xxx.xxx)'... can\'t be established.
-   RSA key fingerprint is XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX.
-   Are you sure you want to continue connecting (yes/no)?
-   ```
-
-   Just type 'yes'. If everything's working, you should get a response like the
-   following:
-
-   ```bash
-   Hi <your_username>! You\'ve successfully authenticated, but GitHub does not provide shell access.
-   ```
-
-9. Next, log into git.generalassemb.ly, go to [https://git.generalassemb.ly/settings/keys](https://git.generalassemb.ly/settings/keys),
-   and paste in the same SSH key.
 
 ## Congrats! :tada:
 
