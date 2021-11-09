@@ -274,7 +274,7 @@ The script will prompt you for some information
    following:
 
    ```bash
-   Hi <your_username>! You\'ve successfully authenticated, but GitHub does not provide shell access.
+   Hi <your_username>! You\'ve successfully authenticated.
    ```
 
 9. Next, log into git.generalassemb.ly, go to [https://git.generalassemb.ly/settings/keys](https://git.generalassemb.ly/settings/keys),
