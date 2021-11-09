@@ -37,7 +37,7 @@ if [[ $1 = "update" ]]; then
     # update homebrew and install following packages
     brew update
 #     brew install tidy-html5
-    brew install libsass
+#     brew install libsass
   else
     echo $'\nYou\'re still all set! Please move on to the next step.\n'
   fi
