@@ -1,4 +1,4 @@
-# Installfest
+# Installfest :tada:
 
 Follow these instructions to set up your laptop for work in SEI. If you've previously set up a development environment on your computer, you may wish to skip some of these steps; do not do so without first checking with an instructor!
 
@@ -6,17 +6,33 @@ If at any point you are unsure of whether you have done something correctly, ask
 
 **The goal of this is not for you to fully understand everything that is being set up on your computer or what all of these tools do!** You should be focused on following along and completing the instructions. If you have any specific questions about anything you do today, we will be happy to answer after Installfest is complete.
 
-Be sure that you run all of these scripts from inside the `installfest` directory. You must be inside this folder so that the commands below have access to the `scripts` directory.
+## Setting Up
+
+:lock: It's recommended that you're logged in as an administrative user on your machine. You will need access to your computer user's password. 
+
+Since we have not yet configured our shell for GitHub/GHE authentication, we will need to manually download this repository as a zip file, unzip it, then move it into your root folder. 
+
+1. Click the green "Code" button on this repo, and select "Download ZIP".
+![Imgur](https://i.imgur.com/jOEXyPc.png)
+1. Double click on the downloaded folder, which will likely be called `installfest-master.zip` to unzip it. Click and drag the unzipped folder called `installfest-master` into your user's root folder (shares the same name as your system username). If you're not sure how to access your user's root folder, check out [this article](https://www.cnet.com/tech/computing/how-to-find-your-macs-home-folder-and-add-it-to-finder/).
+![Imgur](https://i.imgur.com/CEvFiqJ.png)
+1. Open your Terminal application. You can find it in the Applications folder -> Utilties folder. You'll likely want to save it in your Dock. 
+1. Type `pwd`. If your terminal opened in `Users/<your username>`, you are in the right spot! Type `cd installfest-master` to navigate into your Installfest folder. 
+
+Be sure that you run all of these scripts from inside the `installfest-master` directory. You must be inside this folder so that the commands below have access to the `scripts` directory.
+
+Some of the installations may require you to restart your Terminal. If so, just restart your Terminal and `cd installfest-master` to navigate back into this folder.
 
 #### Note for Linux Users
 
 We support both macOS and Ubuntu (an open-source Linux based OS) at SEI. If you choose
-to use Linux, we strongly recommend using the latest Ubuntu [LTS](https://ubuntu.com/about/release-cycle) (currently 18.04). We can guide you through the
+to use Linux, we strongly recommend using  Ubuntu [version 18.04](https://ubuntu.com/about/release-cycle) . We can guide you through the
 process of getting that set up on your machine. If you choose to use a different
 Linux distribution, or a different version of Ubuntu, the scripts in this repository
 will _not_ work, and you will be responsible for configuring your own development
 environment. Only choose this option if you're an experienced Linux user and enjoy
 troubleshooting.
+
 
 ## Zsh (Shell) Configuration (Mac Only)
 
@@ -88,18 +104,25 @@ When you're ready to proceed, run:
 scripts/homebrew.sh update
 ```
 
+>How do I know it worked? Run `brew --version` to see an output.
+
 ## Node/NPM
 
 We're going to be installing Node. Node (and its various packages) will be
 the foundation of a large part of the course. We will also use Node's associated package manager, `npm`, to download and install some Node modules and make them available across all of our projects.
 
+First go to [Node.js](https://nodejs.org/en/download/) and download the LTS for your operating system.  
+
+After installing Node, restart your terminal and run `cd installfest-master` to navigate back into your Installfest directory. 
+
+Then run: 
+
 ```bash
 scripts/npm.sh
 ```
 
-<!-- Restart needed between Node and NPM install? -->
+> How do I know it worked? Run `node --version` to see your Node version. 
 
-Restart your terminal for the installation to take effect.
 
 ## VS Code
 
@@ -193,24 +216,7 @@ Code formatting done well makes your code easy to read and understand, and also 
 	},
 	"python.linting.pylintEnabled": true,
 	"python.linting.enabled": true,
-    "python.formatting.provider": "autopep8",
-	"workbench.colorTheme": "Monokai",
-	"liveServer.settings.donotShowInfoMsg": true,
-	"[html]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[json]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"emmet.includeLanguages": {
-		"javascript": "javascriptreact"
-	},
-	"window.zoomLevel": 1,
-	"workbench.iconTheme": "material-icon-theme",
-	"python.linting.pylintArgs": [
-		"--load-plugins=pylint_django",
-		"--disable=missing-docstring,invalid-name"
-	]
+	"python.formatting.provider": "autopep8"
 }
 ```
 
@@ -230,85 +236,42 @@ default browser.
 When done, do the following on any page in Chrome:
 
 1.  On MacOS, press `Command + option + J` simultaneously to open up the Chrome inspector
-1.  On the top right of the inspector window there are three dots, click that.
+1.  In the top right corner of the inspector window there is a gear wheel that looks like "⚙" -- click that.
 1.  Go to settings and make sure yours look like the following image.
 
 ![Chrome Inspector Settings](https://git.generalassemb.ly/storage/user/5688/files/16fa008e-cecb-11e7-98dc-9a59e264c925)
 
-## What's Left?
+## Postgres
 
-Tomorrow morning we'll be configuring Git on our machines. Stay tuned for that last in-class install!
+We will be installing PostgreSQL, an open source relational database management system. In Unit 4 of SEI, we will be writing SQL (structured query language) and maintaining our relational databases using Postgres.
 
-Over the next few days, work on getting the remaining technologies installed:
 
-### MongoDB
+![psql Elephant](https://postgresapp.com/img/PostgresAppIconLarge.png)
 
-We will install MongoDB, another open source database. To do that,
-type:
+>Note: If you have previously installed Postgres via other means, particularly via EnterpriseDB, you will have all kinds of weird issues with this install. If you have the EnterpriseDB install of Postgres on your machine, take time to completely remove it now.  Otherwise, onward...
 
-```
-scripts/mongodb.sh
-```
+#### Mac Users
 
-If you got any errors there, please let an instructor know. Otherwise, you can
-verify that MongoDB is working correctly by running one of the following
-commands:
+By far the most painless method for installing Postgres on a Mac these days is to use Postgres App.
 
-### macOS
+Head on over and follow the [straightforward setup instructions](https://postgresapp.com/)
 
-Run `brew services list`. You should see `mongodb-community` with the word "started" to
-the right of it.
+##### Note:
 
-### Ubuntu
+This step is meant to be run as ONE command, not two, and MUST be run so you can access the `psql` commands from the CLI:
+![psql step 3](https://i.imgur.com/Krhe0VT.png)
 
-Run `sudo systemctl status mongodb`. You should see a green circle and the words
-"active (running)" somewhere in the output.
+##### You're all set.
 
-### On either OS
+You might need to quit and restart your terminal to be able to just type `psql` and have it open the Postgres CLI.  But right away, you should be able to open the Postgres app by clicking the elephant icon in your taskbar and double-clicking on the db that matches your username.
 
-If the service appears to be running, type `mongo` and hit enter.
+#### Ubuntu Users
 
-You should see something like this:
+Follow the directions [here](https://www.postgresql.org/download/linux/ubuntu/) to download PostgreSQL using `apt-get`.
 
-```
-MongoDB shell version v4.2.0
-connecting to: mongodb://127.0.0.1:27017
-MongoDB server version: 4.2.0
-```
+#### WSL Users
 
-possibly followed by some warnings/errors. Ignore these warnings/errors for now.
-You should notice that your command prompt is gone, replaced with a `>`.
-This means the MongoDB shell installed correctly. Press `Ctrl + c` to get back
-to your terminal.
-
-### Postgres
-
-We will be installing PostgreSQL, an open source relational database management system. In SEI, we will be writing SQL (structured query language) and maintaining our relational databases using Postgres.
-
-Enter the following command in your terminal
-
-```bash
-scripts/postgres.sh
-```
-
-- To ensure Postgres is running on your computer, **on macOS** type:
-
-```bash
-brew services list
-```
-
-- To ensure Posgres is running on your computer, **on Linux** type:
-
-```bash
-service postgresql status
-```
-
-(_macOS_) Postgres will only work if you see a service with a `Name` of postgresql and `Status` say `started`
-
-(_Linux_) Postgres will only work if you see a green circle and the words
-"active (running)" somewhere in the output.
-
-If Postgres didn't start correctly according to the criteria above, ask an instructor for assistance.
+Follow the installation directions [here](https://harshityadav95.medium.com/postgresql-in-windows-subsystem-for-linux-wsl-6dc751ac1ff3). 
 
 Verify that Postgres is working with the command
 
@@ -340,3 +303,79 @@ scripts/python.sh
 ```
 
 Shut down your terminal and navigate back to the installfest repo before moving on.
+
+> How do I know it worked? Run `python3 --version` to see an output. 
+
+## GitHub and Initial Setup
+
+If you haven't done so already, go to [GitHub](http://www.github.com) and create
+an account.
+
+**IMPORTANT**: be sure to write down your username and password somewhere, since
+we'll be using these credentials later.
+
+Next, go to [GitHub Enterprise](https://git.generalassemb.ly) and create an account. It is recommended that you use the same username, email address, and password for both accounts. GitHub Enterprise will be the source of your learning material throughout SEI, while your personal Github will be where you showcase your projects.
+
+## Git
+
+Run the command below in your terminal.
+**This script should be run from the root of this git-install repository.**
+
+```bash
+  scripts/git.sh
+```
+
+The script will prompt you for some information
+
+1.  Provide your GitHub username
+2.  Provide your GitHub email (email you signed up for your account with)
+3.  When prompted, log into GitHub.com, go to [https://github.com/settings/ssh](https://github.com/settings/ssh)
+
+4.  Click the `New SSH key` button at the top right of the page
+
+5.  Enter a title for your SSH key (you can call it whatever you want)
+
+6.  paste in your SSH key. It should be copied to your clipboard already!
+
+    _Help! My SSH key is no longer copied to my clipboard_ (select your OS then run the below command in terminal)
+    <details>
+    <summary>macOS</summary>
+
+`pbcopy < ~/.ssh/id_rsa.pub`
+
+  </details>
+
+  <details>
+  <summary>Linux</summary>
+
+`xclip -selection clipboard < ~/.ssh/id_rsa.pub`
+
+  </details>
+
+7. Click the `Add SSH key` button
+
+8. In your terminal, press `[Enter]` to continue
+
+   If you get a prompt along the lines of
+
+   ```bash
+   The authenticity of host 'github.com (xxx.xxx.xxx.xxx)'... can\'t be established.
+   RSA key fingerprint is XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX.
+   Are you sure you want to continue connecting (yes/no)?
+   ```
+
+   Just type 'yes'. If everything's working, you should get a response like the
+   following:
+
+   ```bash
+   Hi <your_username>! You\'ve successfully authenticated, but GitHub does not provide shell access.
+   ```
+
+9. Next, log into git.generalassemb.ly, go to [https://git.generalassemb.ly/settings/keys](https://git.generalassemb.ly/settings/keys),
+   and paste in the same SSH key.
+
+## Congrats! :tada:
+
+![](https://media.giphy.com/media/ag3PWAeHrCdWV0tlkD/giphy.gif)
+
+That was a lot of setup, but the time we invested today will pay off with smooth sailing throughout the course, as far as installations and environmental setup goes! Thanks for all your hard work, and congrats on getting your machine ready for SEIR! 
