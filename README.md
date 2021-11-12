@@ -5,6 +5,7 @@ Follow these instructions to set up your laptop for work in SEI. If you've previ
 If at any point you are unsure of whether you have done something correctly, ask an instructor. It's important in many cases that we do these steps in order. In general, if you receive no output, the command has executed successfully. (No news is good news.) If you receive output in your terminal that you didn't expect, please notify an instructor.
 
 **The goal of this is not for you to fully understand everything that is being set up on your computer or what all of these tools do!** You should be focused on following along and completing the instructions. If you have any specific questions about anything you do today, we will be happy to answer after Installfest is complete.
+
 ## GitHub and Initial Setup
 
 If you haven't done so already, go to [GitHub](http://www.github.com) and create
@@ -19,34 +20,49 @@ Next, go to [GitHub Enterprise](https://git-invite.generalassemb.ly/invite) and 
 
 :lock: It's recommended that you're logged in as an administrative user on your machine. You will need access to your computer user's password. 
 
-Since we have not yet configured our shell for GitHub/GHE authentication, we will need to manually download this repository as a zip file, unzip it, then move it into your root folder. 
+### Zoom Screen Sharing
+
+One of the most common ways we debug issues is by having students share their screens! However, on MacOS Catalina and later, we need to specifically enable screen sharing permissions. Follow the steps in the Zoom documentation [here](https://support.zoom.us/hc/en-us/articles/360016688031) so that you can share your screen. You may need to leave and rejoin the Zoom call to see the changes. 
+
+### Terminal Access to Disk
+
+We also need to grant permissions to our Terminal application to write to our full disk. In order to do so, go to your MacOS Preferences -> Security & Privacy -> Full Disk Access. If Terminal does not appear in the list of applications, add it and save the changes. 
+
+See this [article](https://support.intego.com/hc/en-us/articles/360016683471-Enable-Full-Disk-Access-in-macOS) for more detailed steps.
+
+### Download This Repository
+
+Since we have not yet configured our shell for GitHub/GHE authentication, we will need to manually download this repository as a zip file, unzip it,  and navigate into it. 
 
 1. Click the green "Code" button on this repo, and select "Download ZIP".
 ![Imgur](https://i.imgur.com/jOEXyPc.png)
-1. Double click on the downloaded folder, which will likely be called `installfest-master.zip` to unzip it. Click and drag the unzipped folder called `installfest-master` into your user's root folder (shares the same name as your system username). If you're not sure how to access your user's root folder, check out [this article](https://www.cnet.com/tech/computing/how-to-find-your-macs-home-folder-and-add-it-to-finder/).
+1. Double click on the downloaded folder, which will likely be called `installfest-master.zip` to unzip it. 
 ![Imgur](https://i.imgur.com/CEvFiqJ.png)
 1. Open your Terminal application. You can find it in the Applications folder -> Utilties folder. You'll likely want to save it in your Dock. 
-1. Type `pwd`. If your terminal opened in `Users/<your username>`, you are in the right spot! Type `cd installfest-master` to navigate into your Installfest folder. 
+1. Type `cd ` with a space at the end. Click and drag your unzipped `installfest-master` folder and release it in the Terminal window. Press enter. When you type `pwd` and press `return`, you should be in the `installfest-master` folder. 
 
 Be sure that you run all of these scripts from inside the `installfest-master` directory. You must be inside this folder so that the commands below have access to the `scripts` directory.
 
-Some of the installations may require you to restart your Terminal. If so, just restart your Terminal and `cd installfest-master` to navigate back into this folder.
+Some of the installations may require you to restart your Terminal. If so, just restart your Terminal and to navigate back into this folder.
 
 ## Mac OS Versions
 
 If you have not yet updated to MacOS Monterey Version 12, do NOT update your OS during the course. Updating your OS may result in some unexpected issues and bugs with the tools that we use. 
 
-If you are on Monterey already, please note that some of the installations may not work correctly yet as software is being updated to the new OS. We will find workarounds for any Monterey related issues. 
-
+If you are on Monterey already, that's perfectly fine and some of your instructors are also on Monterey. Please note that some of the installations may not work correctly yet as software is being updated to be compatible with the new OS. We will find workarounds for any Monterey related issues that we encounter. 
 
 #### Note for Linux Users
 
-We support both macOS and Ubuntu (an open-source Linux based OS) at SEI. If you choose
-to use Linux, we strongly recommend using  Ubuntu [version 18.04](https://ubuntu.com/about/release-cycle) . We can guide you through the
-process of getting that set up on your machine. If you choose to use a different
+We support both macOS and Ubuntu (an open-source Linux based OS) at SEI, though most of our course materials are geared towards Mac users. If you choose
+to use Linux, you should feel very comfortable setting up your own environment and troubleshooting issues. We strongly recommend using  Ubuntu [version 18.04](https://ubuntu.com/about/release-cycle), which one of our instructional team is also running. We can guide you through the
+process of getting that set up on your machine. 
+
+If you choose to use a different
 Linux distribution, or a different version of Ubuntu, the scripts in this repository
 will _not_ work, and you will be responsible for configuring your own development
-environment. Only choose this option if you're an experienced Linux user and enjoy
+environment. 
+
+Only choose to use Linux/Ubuntu/WSL if you're an experienced Linux user and enjoy
 troubleshooting.
 
 
@@ -193,8 +209,10 @@ After installing Node, restart your terminal and run `cd installfest-master` to 
 Then run: 
 
 ```bash
-scripts/npm.sh
+sudo scripts/npm.sh
 ```
+
+`sudo` stands for `superuser do` and is used to override potential permissions issues. If you see deprecation warnings, that's fine as long as your packages were installed. 
 
 > How do I know it worked? Run `node --version` to see your Node version. 
 
