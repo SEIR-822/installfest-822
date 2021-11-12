@@ -26,7 +26,7 @@ One of the most common ways we debug issues is by having students share their sc
 
 ### Terminal Access to Disk
 
-We also need to grant permissions to our Terminal application to write to our full disk. In order to do so, go to your MacOS Preferences -> Security & Privacy -> Full Disk Access. If Terminal does not appear in the list of applications, add it and save the changes. 
+We also need to grant permissions to our Terminal application to write to our full disk. In order to do so, click on the Apple icon in the upper lefthand corner of your screen and go to your MacOS System Preferences -> Security & Privacy -> Full Disk Access. If Terminal does not appear in the list of applications, add it and save the changes. 
 
 See this [article](https://support.intego.com/hc/en-us/articles/360016683471-Enable-Full-Disk-Access-in-macOS) for more detailed steps.
 
