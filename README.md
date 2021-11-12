@@ -1,4 +1,4 @@
-# Installfest
+# Installfest :tada:
 
 Follow these instructions to set up your laptop for work in SEI. If you've previously set up a development environment on your computer, you may wish to skip some of these steps; do not do so without first checking with an instructor!
 
@@ -6,17 +6,65 @@ If at any point you are unsure of whether you have done something correctly, ask
 
 **The goal of this is not for you to fully understand everything that is being set up on your computer or what all of these tools do!** You should be focused on following along and completing the instructions. If you have any specific questions about anything you do today, we will be happy to answer after Installfest is complete.
 
-Be sure that you run all of these scripts from inside the `installfest` directory. You must be inside this folder so that the commands below have access to the `scripts` directory.
+## GitHub and Initial Setup
+
+If you haven't done so already, go to [GitHub](http://www.github.com) and create
+an account.
+
+**IMPORTANT**: be sure to write down your username and password somewhere, since
+we'll be using these credentials later.
+
+Next, go to [GitHub Enterprise](https://git-invite.generalassemb.ly/invite) and create an account. It is recommended that you use the same username and email address for both accounts. (You can use the same password as well.) GitHub Enterprise will be the source of your learning material throughout SEI, while your personal Github will be where you showcase your projects.
+
+## Setting Up
+
+:lock: It's recommended that you're logged in as an administrative user on your machine. You will need access to your computer user's password. 
+
+### Zoom Screen Sharing
+
+One of the most common ways we debug issues is by having students share their screens! However, on MacOS Catalina and later, we need to specifically enable screen sharing permissions. Follow the steps in the Zoom documentation [here](https://support.zoom.us/hc/en-us/articles/360016688031) so that you can share your screen. You may need to leave and rejoin the Zoom call to see the changes. 
+
+### Terminal Access to Disk
+
+We also need to grant permissions to our Terminal application to write to our full disk. In order to do so, click on the Apple icon in the upper lefthand corner of your screen and go to your MacOS System Preferences -> Security & Privacy -> Full Disk Access. If Terminal does not appear in the list of applications, add it and save the changes. 
+
+See this [article](https://support.intego.com/hc/en-us/articles/360016683471-Enable-Full-Disk-Access-in-macOS) for more detailed steps.
+
+### Download This Repository
+
+Since we have not yet configured our shell for GitHub/GHE authentication, we will need to manually download this repository as a zip file, unzip it,  and navigate into it. 
+
+1. Click the green "Code" button on this repo, and select "Download ZIP".
+![Imgur](https://i.imgur.com/jOEXyPc.png)
+1. Double click on the downloaded folder, which will likely be called `installfest-master.zip` to unzip it. 
+![Imgur](https://i.imgur.com/CEvFiqJ.png)
+1. Open your Terminal application. You can find it in the Applications folder -> Utilties folder. You'll likely want to save it in your Dock. 
+1. Type `cd ` with a space at the end. Click and drag your unzipped `installfest-master` folder and release it in the Terminal window. Press enter. When you type `pwd` and press `return`, you should be in the `installfest-master` folder. 
+
+Be sure that you run all of these scripts from inside the `installfest-master` directory. You must be inside this folder so that the commands below have access to the `scripts` directory.
+
+Some of the installations may require you to restart your Terminal. If so, just restart your Terminal and to navigate back into this folder.
+
+## Mac OS Versions
+
+If you have not yet updated to MacOS Monterey Version 12, do NOT update your OS during the course. Updating your OS may result in some unexpected issues and bugs with the tools that we use. 
+
+If you are on Monterey already, that's perfectly fine and some of your instructors are also on Monterey. Please note that some of the installations may not work correctly yet as software is being updated to be compatible with the new OS. We will find workarounds for any Monterey related issues that we encounter. 
 
 #### Note for Linux Users
 
-We support both macOS and Ubuntu (an open-source Linux based OS) at SEI. If you choose
-to use Linux, we strongly recommend using the latest Ubuntu [LTS](https://ubuntu.com/about/release-cycle) (currently 18.04). We can guide you through the
-process of getting that set up on your machine. If you choose to use a different
+We support both macOS and Ubuntu (an open-source Linux based OS) at SEI, though most of our course materials are geared towards Mac users. If you choose
+to use Linux, you should feel very comfortable setting up your own environment and troubleshooting issues. We strongly recommend using  Ubuntu [version 18.04](https://ubuntu.com/about/release-cycle), which one of our instructional team is also running. We can guide you through the
+process of getting that set up on your machine. 
+
+If you choose to use a different
 Linux distribution, or a different version of Ubuntu, the scripts in this repository
 will _not_ work, and you will be responsible for configuring your own development
-environment. Only choose this option if you're an experienced Linux user and enjoy
+environment. 
+
+Only choose to use Linux/Ubuntu/WSL if you're an experienced Linux user and enjoy
 troubleshooting.
+
 
 ## Zsh (Shell) Configuration (Mac Only)
 
@@ -88,16 +136,86 @@ When you're ready to proceed, run:
 scripts/homebrew.sh update
 ```
 
+>How do I know it worked? Run `brew --version` to see an output.
+
+
+## Git
+
+Run the command below in your terminal.
+**This script should be run from the root of this git-install repository.**
+
+```bash
+  scripts/git.sh
+```
+
+The script will prompt you for some information
+
+1.  Provide your GitHub username
+2.  Provide your GitHub email (email you signed up for your account with)
+3.  When prompted, log into GitHub.com, go to [https://github.com/settings/ssh](https://github.com/settings/ssh)
+
+4.  Click the `New SSH key` button at the top right of the page
+
+5.  Enter a title for your SSH key (you can call it whatever you want)
+
+6.  paste in your SSH key. It should be copied to your clipboard already!
+
+    _Help! My SSH key is no longer copied to my clipboard_ (select your OS then run the below command in terminal)
+    <details>
+    <summary>macOS</summary>
+
+`pbcopy < ~/.ssh/id_rsa.pub`
+
+  </details>
+
+  <details>
+  <summary>Linux</summary>
+
+`xclip -selection clipboard < ~/.ssh/id_rsa.pub`
+
+  </details>
+
+7. Click the `Add SSH key` button
+
+8. In your terminal, press `[Enter]` to continue
+
+   If you get a prompt along the lines of
+
+   ```bash
+   The authenticity of host 'github.com (xxx.xxx.xxx.xxx)'... can\'t be established.
+   RSA key fingerprint is XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX.
+   Are you sure you want to continue connecting (yes/no)?
+   ```
+
+   Just type 'yes'. If everything's working, you should get a response like the
+   following:
+
+   ```bash
+   Hi <your_username>! You\'ve successfully authenticated, but GitHub does not provide shell access.
+   ```
+
+9. Next, log into git.generalassemb.ly, go to [https://git.generalassemb.ly/settings/keys](https://git.generalassemb.ly/settings/keys),
+   and paste in the same SSH key.
+
 ## Node/NPM
 
 We're going to be installing Node. Node (and its various packages) will be
 the foundation of a large part of the course. We will also use Node's associated package manager, `npm`, to download and install some Node modules and make them available across all of our projects.
 
+First go to [Node.js](https://nodejs.org/en/download/) and download the LTS for your operating system.  
+
+After installing Node, restart your terminal and run `cd installfest-master` to navigate back into your Installfest directory. 
+
+Then run: 
+
 ```bash
-scripts/npm.sh
+sudo scripts/npm.sh
 ```
 
-<!-- Restart needed between Node and NPM install? -->
+`sudo` stands for `superuser do` and is used to override potential permissions issues. If you see deprecation warnings, that's fine as long as your packages were installed. 
+
+> How do I know it worked? Run `node --version` to see your Node version. 
+
 
 ## VS Code
 
@@ -144,7 +262,7 @@ From the command line, run the following command from any directory: `git config
 
 VS Code has numerous extensions that make developers' lives easier! We will be installing a few essential ones right now:
 
-In your terminal, run:
+First navigate BACK into your Installfest directory. Then, in your terminal, run:
 
 ```
 code --install-extension ./ga-seir-bundle/ga-seir-bundle-0.0.1.vsix
@@ -156,159 +274,15 @@ If your installations were a success, you will see a message in terminal that lo
 
 > Quit your instance of VS Code and reopen for the newly-installed extensions to take effect!
 
-### Configure VS Code Settings
 
-Code formatting done well makes your code easy to read and understand, and also looks professional -- all things we want! Developing good habits early on to format as you write is important, but luckily VS Code has some great built-in tools to make formatting with your new extensions easier and more automatic.
-
-1.  **Open settings.json**: In the navigation menu, go to `View` -> `Command Palette`, or press `command` + `shift` + `p` to open your Command Palette. Type `Open Settings`, then select `Preferences: Open Settings (JSON)`. (Do not select the Default, Keyoboard, UI or Workspace options.)
-
-![opening settings file](https://i.imgur.com/QNh6WkI.png)
-
-2. Once you have opened your `settings.json` file, copy and paste the following code into the top of your settings. Make sure you are pasting this code between the brackets.
-
-```json
-{
-	"editor.formatOnSave": true,
-	"editor.formatOnPaste": true,
-	"editor.tabCompletion": "on",
-	"editor.wordWrap": "on",
-	"files.trimFinalNewlines": true,
-	"files.autoSave": "afterDelay",
-	"prettier.singleQuote": true,
-	"prettier.semi": true,
-	"prettier.jsxBracketSameLine": true,
-	"prettier.useTabs": true,
-	"prettier.tabWidth": 2,
-	"prettier.jsxSingleQuote": true,
-	"diffEditor.ignoreTrimWhitespace": true,
-	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": true
-	},
-	"eslint.alwaysShowStatus": true,
-	"javascript.updateImportsOnFileMove.enabled": "always",
-	"[javascript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"python.linting.pylintEnabled": true,
-	"python.linting.enabled": true,
-	"python.formatting.provider": "autopep8"
-}
-```
-
-> Note: if you find any of these settings don't work for you, feel free to modify them as you wish!
-
-3. Now your `settings.json` should look like this:
-
-![settings.json file](https://i.imgur.com/3x5uNur.png)
-
-You will need to close VS Code completely and reopen it for changes to take effect. Now your text editor will AUTOMATICALLY format on save and paste!
 
 ## Chrome
 
 If you do not already have Google Chrome, [download here](https://www.google.com/chrome/browser/desktop/index.html), install it, and set it as your
 default browser.
 
-When done, do the following on any page in Chrome:
 
-1.  On MacOS, press `Command + option + J` simultaneously to open up the Chrome inspector
-1.  On the top right of the inspector window there are three dots, click that.
-1.  Go to settings and make sure yours look like the following image.
-
-![Chrome Inspector Settings](https://git.generalassemb.ly/storage/user/5688/files/16fa008e-cecb-11e7-98dc-9a59e264c925)
-
-## What's Left?
-
-Tomorrow morning we'll be configuring Git on our machines. Stay tuned for that last in-class install!
-
-Over the next few days, work on getting the remaining technologies installed:
-
-### MongoDB
-
-We will install MongoDB, another open source database. To do that,
-type:
-
-```
-scripts/mongodb.sh
-```
-
-If you got any errors there, please let an instructor know. Otherwise, you can
-verify that MongoDB is working correctly by running one of the following
-commands:
-
-### macOS
-
-Run `brew services list`. You should see `mongodb-community` with the word "started" to
-the right of it.
-
-### Ubuntu
-
-Run `sudo systemctl status mongodb`. You should see a green circle and the words
-"active (running)" somewhere in the output.
-
-### On either OS
-
-If the service appears to be running, type `mongo` and hit enter.
-
-You should see something like this:
-
-```
-MongoDB shell version v4.2.0
-connecting to: mongodb://127.0.0.1:27017
-MongoDB server version: 4.2.0
-```
-
-possibly followed by some warnings/errors. Ignore these warnings/errors for now.
-You should notice that your command prompt is gone, replaced with a `>`.
-This means the MongoDB shell installed correctly. Press `Ctrl + c` to get back
-to your terminal.
-
-### Postgres
-
-We will be installing PostgreSQL, an open source relational database management system. In SEI, we will be writing SQL (structured query language) and maintaining our relational databases using Postgres.
-
-Enter the following command in your terminal
-
-```bash
-scripts/postgres.sh
-```
-
-- To ensure Postgres is running on your computer, **on macOS** type:
-
-```bash
-brew services list
-```
-
-- To ensure Posgres is running on your computer, **on Linux** type:
-
-```bash
-service postgresql status
-```
-
-(_macOS_) Postgres will only work if you see a service with a `Name` of postgresql and `Status` say `started`
-
-(_Linux_) Postgres will only work if you see a green circle and the words
-"active (running)" somewhere in the output.
-
-If Postgres didn't start correctly according to the criteria above, ask an instructor for assistance.
-
-Verify that Postgres is working with the command
-
-```bash
-psql
-```
-
-This should bring you into the PostgreSQL interactive terminal. It should look something like this
-
-```bash
-psql (<version_number>)
-Type "help" for help.
-
-<your_username>=#
-```
-
-Exit the psql terminal by typing `\q`, followed by `Enter`
-
-### Python
+## Python
 
 This script will install the Python language onto your computer. If you have a Mac, you may have a certain version of Python installed, but we will be making sure everyone is on the same version.
 
@@ -321,3 +295,13 @@ scripts/python.sh
 ```
 
 Shut down your terminal and navigate back to the installfest repo before moving on.
+
+> How do I know it worked? Run `python3 --version` to see an output. 
+
+
+
+## Congrats! :tada:
+
+![](https://media.giphy.com/media/ag3PWAeHrCdWV0tlkD/giphy.gif)
+
+That was a lot of setup, but the time we invested today will pay off with smooth sailing throughout the course, as far as installations and environmental setup goes! Thanks for all your hard work, and congrats on getting your machine ready for SEIR! 
