@@ -244,7 +244,7 @@ From the command line, run the following command from any directory: `git config
 
 VS Code has numerous extensions that make developers' lives easier! We will be installing a few essential ones right now:
 
-In your terminal, run:
+First navigate BACK into your Installfest directory. Then, in your terminal, run:
 
 ```
 code --install-extension ./ga-seir-bundle/ga-seir-bundle-0.0.1.vsix
