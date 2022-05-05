@@ -14,7 +14,7 @@ an account.
 **IMPORTANT**: be sure to write down your username and password somewhere, since
 we'll be using these credentials later.
 
-Next, go to [GitHub Enterprise](https://git-invite.generalassemb.ly/invite) and create an account. It is recommended that you use the same username and email address for both accounts. (You can use the same password as well.) GitHub Enterprise will be the source of your learning material throughout SEI, while your personal Github will be where you showcase your projects.
+Add your name to the thread in Slack. Your instructors will add you to our course organization so that you have access to all the curriculum for the course. 
 
 ## Setting Up
 
@@ -47,9 +47,7 @@ Some of the installations may require you to restart your Terminal. If so, just 
 
 ## Mac OS Versions
 
-If you have not yet updated to MacOS Monterey Version 12, do NOT update your OS during the course. Updating your OS may result in some unexpected issues and bugs with the tools that we use. 
-
-If you are on Monterey already, that's perfectly fine and some of your instructors are also on Monterey. Please note that some of the installations may not work correctly yet as software is being updated to be compatible with the new OS. We will find workarounds for any Monterey related issues that we encounter. 
+Do NOT update your OS during the course after today's installations. Updating your OS may result in some unexpected issues and bugs with the tools that we use. 
 
 #### Note for Linux Users
 
@@ -194,8 +192,7 @@ The script will prompt you for some information
    Hi <your_username>! You\'ve successfully authenticated, but GitHub does not provide shell access.
    ```
 
-9. Next, log into git.generalassemb.ly, go to [https://git.generalassemb.ly/settings/keys](https://git.generalassemb.ly/settings/keys),
-   and paste in the same SSH key.
+
 
 ## Node/NPM
 
