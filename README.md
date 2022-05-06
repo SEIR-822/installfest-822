@@ -105,13 +105,14 @@ If you see a message similar to the one below, you are all set to continue!
 xcode-select: error: command line tools are already installed, use "Software Update" to install updates
 ```
 
+
 ## Homebrew
 
 [Homebrew](https://brew.sh/) is a package manager for macOS that makes installing software and useful tools easy.
 
 If you are on a Linux-based OS, like Ubuntu, you won't use Homebrew, **but
 you must still run this script**. Your
-system includes a package manager that serves the same purpose. The script below
+system includes a package manager (apt-get) that serves the same purpose. The script below
 will automatically detect if you're on Linux, and if you are, it won't install
 Homebrew. Instead, it will install a few tools that are needed on Linux for the
 rest of Installfest.
@@ -140,7 +141,7 @@ scripts/homebrew.sh update
 ## Git
 
 Run the command below in your terminal.
-**This script should be run from the root of this git-install repository.**
+**This script should be run from the root of this installfest-master repository.**
 
 ```bash
   scripts/git.sh
@@ -156,7 +157,7 @@ The script will prompt you for some information
 
 5.  Enter a title for your SSH key (you can call it whatever you want)
 
-6.  paste in your SSH key. It should be copied to your clipboard already!
+6.  Paste in your SSH key. It should be copied to your clipboard already!
 
     _Help! My SSH key is no longer copied to my clipboard_ (select your OS then run the below command in terminal)
     
@@ -237,7 +238,6 @@ VS Code is the text editor we will use throughout the course. If you do not alre
 
 ```bash
 cat << EOF >> ~/.zshrc
-# Add Visual Studio Code (code)
 export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 EOF
 ```
