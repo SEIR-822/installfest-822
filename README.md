@@ -105,6 +105,7 @@ If you see a message similar to the one below, you are all set to continue!
 xcode-select: error: command line tools are already installed, use "Software Update" to install updates
 ```
 
+If you get an error especially if you have an older opperating system, you may need to manually install the command line tools and google to find a version that works with your opperating system. https://developer.apple.com/download/all/?q=command%20line%20tools
 
 ## Homebrew
 
