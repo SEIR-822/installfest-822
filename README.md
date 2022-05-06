@@ -255,23 +255,6 @@ From the command line, run the following command from any directory: `git config
 
 > This is especially important if you have previously used other code editors on your system.
 
-### Install VS Code Extensions
-
-VS Code has numerous extensions that make developers' lives easier! We will be installing a few essential ones right now:
-
-First navigate BACK into your Installfest directory. Then, in your terminal, run:
-
-```
-code --install-extension ./ga-seir-bundle/ga-seir-bundle-0.0.1.vsix
-```
-
-If your installations were a success, you will see a message in terminal that looks like this:
-
-![successful extension bundle install](https://i.imgur.com/0DP1j0W.png)
-
-> Quit your instance of VS Code and reopen for the newly-installed extensions to take effect!
-
-
 
 ## Chrome
 
