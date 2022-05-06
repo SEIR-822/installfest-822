@@ -159,19 +159,17 @@ The script will prompt you for some information
 6.  paste in your SSH key. It should be copied to your clipboard already!
 
     _Help! My SSH key is no longer copied to my clipboard_ (select your OS then run the below command in terminal)
+    
+    <details><summary>macOS</summary>
+    <code> pbcopy < ~/.ssh/id_rsa.pub </code>
+    </details>
+
     <details>
-    <summary>macOS</summary>
+    <summary>Linux</summary>
 
-`pbcopy < ~/.ssh/id_rsa.pub`
+    `xclip -selection clipboard < ~/.ssh/id_rsa.pub`
 
-  </details>
-
-  <details>
-  <summary>Linux</summary>
-
-`xclip -selection clipboard < ~/.ssh/id_rsa.pub`
-
-  </details>
+    </details>
 
 7. Click the `Add SSH key` button
 
