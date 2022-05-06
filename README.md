@@ -85,8 +85,8 @@ In order for Homebrew and other tools to work, we'll need to rely on a number of
 come pre-installed on Linux. Install these tools **via the terminal** using the
 command:
 
-```shell
 # macOS ONLY
+```shell
 xcode-select --install
 ```
 
