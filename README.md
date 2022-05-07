@@ -64,7 +64,7 @@ Only choose to use Linux/Ubuntu/WSL if you're an experienced Linux user and enjo
 troubleshooting.
 
 
-## Zsh (Shell) Configuration (Mac Only)
+## Zsh (Shell) Configuration 
 
 macOS ships with utilities that are slightly different from standard Linux tools.
 To smooth out _some_ of the differences and customize what we see in the Terminal application, we need to change how macOS loads our
@@ -79,7 +79,7 @@ In your terminal, type:
 
 Then restart your Terminal (quit out of the application completely by pressing `command q` and then restart it), and you should see your changes take effect!
 
-## Command Line Tools/XCode
+## Command Line Tools/XCode (Mac Only)
 
 In order for Homebrew and other tools to work, we'll need to rely on a number of programs that
 come pre-installed on Linux. Install these tools **via the terminal** using the
