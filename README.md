@@ -199,9 +199,25 @@ The script will prompt you for some information
 We're going to be installing Node. Node (and its various packages) will be
 the foundation of a large part of the course. We will also use Node's associated package manager, `npm`, to download and install some Node modules and make them available across all of our projects.
 
+### Linux/Ubuntu
+
+Run the following commands to install Node and NPM: 
+      
+```bash
+sudo apt install nodejs
+```
+      
+Restart your Terminal, then run the following: 
+      
+```bash
+sudo apt install npm
+```  
+
+### Mac
+
 First go to [Node.js](https://nodejs.org/en/download/) and download the LTS for your operating system.  
 
-After installing Node, restart your terminal and run `cd installfest-master` to navigate back into your Installfest directory. 
+After installing Node, restart your terminal and run navigate back into your Installfest directory. 
 
 Then run: 
 
@@ -222,7 +238,9 @@ VS Code is the text editor we will use throughout the course. If you do not alre
 
 ![Click application and drag to Applications folder](https://i.imgur.com/Cd0B9hW.png)
 
-### Launching VS Code from Terminal
+### Launching VS Code from Terminal 
+      
+> Note: This section is only for Mac users. Linux/Ubuntu automatically installs the `code` command to your CLI. 
 
 - Open VS Code by clicking on the icon in your dock, OR by opening your search `cmd` + `space` and typing `vscode`.
 - To be able to launch VS Code from your terminal: open the Command Palette (⇧⌘P) and type 'shell command' to find the Shell Command: Install 'code' command in PATH.
