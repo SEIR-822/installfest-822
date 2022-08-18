@@ -242,7 +242,7 @@ VS Code is the text editor we will use throughout the course. If you do not alre
       
 > Note: This section is only for Mac users. Linux/Ubuntu automatically installs the `code` command to your CLI. 
 
-- Open VS Code by clicking on the icon in your dock, OR by opening your search `cmd` + `space` and typing `vscode`.
+- Open VS Code by clicking on the icon in your dock, OR by opening your search `cmd` + `space` and typing `visual studio`.
 - To be able to launch VS Code from your terminal: open the Command Palette (⇧⌘P) and type 'shell command' to find the Shell Command: Install 'code' command in PATH.
 
 ![install shell commands](https://i.imgur.com/il5eKGh.png)
