@@ -4,7 +4,7 @@
 if [[ $(uname -s) != 'Darwin' ]]; then
   # install python and pip
   sudo apt-get update
-  sudo apt-get install -y python3.7 python3-pip
+  sudo apt-get install -y python3 python3-pip
   # install
   pip3 install pipenv pylint
   # print success
